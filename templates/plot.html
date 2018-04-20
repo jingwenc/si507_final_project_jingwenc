@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="/static/style.css">
+<table border=1>
+    <tr>
+        <th>No.</th>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>Location</th>
+        <th>MinSalary</th>
+        <th>MaxSalary</th>
+    </tr>
+{% for j in job_list %}
+    <tr>
+        <td>{{j[0]}}</td>
+        <td>{{j[1]}}</td>
+        <td>{{j[2]}}</td>
+        <td>{{j[3]}}</td>
+        <td>{{j[4]}}</td>
+        <td>{{j[5]}}</td>
+    </tr>
+{% endfor %}
+</table>
+<p><a href="/jobs/plot/jobs"> Plot the locations of all jobs!</a></p>
+
+<form action="/jobs/plot/nearby" method="POST">
+    <p>Plot the nearby places around:</p>
+    <p>Job No. : <input type="text" name='num' /> </p>
+    <p>Types of nearby places you want to search: <input type="text" name='types' />  <button type="submit" >Plot nearby</button></p>
+</form>
+<form action="/jobs/plot/quality" method="POST">
+    <p>Plot earnings and regular cost(only for available salary):</p>
+    <p>Job No. : <input type="text" name='num' /> <button type="submit" >Plot life quality</button></p>
+</form>
+<h4>Type options:</h4>
+<div class="column"> <ul>
+    <li><code>accounting</code></li>
+    <li><code>airport</code></li>
+    <li><code>amusement_park</code></li>
+    <li><code>aquarium</code></li>
+    <li><code>art_gallery</code></li>
+    <li><code>atm</code></li>
+    <li><code>bakery</code></li>
+    <li><code>bank</code></li>
+    <li><code>bar</code></li>
+    <li><code>beauty_salon</code></li>
+    <li><code>bicycle_store</code></li>
+    <li><code>book_store</code></li>
+    <li><code>bowling_alley</code></li>
+    <li><code>bus_station</code></li>
+    <li><code>cafe</code></li>
+    <li><code>campground</code></li>
+    <li><code>car_dealer</code></li>
+    <li><code>car_rental</code></li>
+    <li><code>car_repair</code></li>
+    <li><code>car_wash</code></li>
+    <li><code>casino</code></li>
+    <li><code>cemetery</code></li>
+    <li><code>church</code></li>
+    <li><code>city_hall</code></li>
+    <li><code>clothing_store</code></li>
+    <li><code>convenience_store</code></li>
+    <li><code>courthouse</code></li>
+    <li><code>dentist</code></li>
+    <li><code>department_store</code></li>
+    <li><code>doctor</code></li>
+    <li><code>electrician</code></li>
+    <li><code>electronics_store</code></li>
+    <li><code>embassy</code></li>
+    <li><code>fire_station</code></li>
+    <li><code>florist</code></li>
+    <li><code>funeral_home</code></li>
+    <li><code>furniture_store</code></li>
+    <li><code>gas_station</code></li>
+    <li><code>gym</code></li>
+    <li><code>hair_care</code></li>
+    <li><code>hardware_store</code></li>
+    <li><code>hindu_temple</code></li>
+    <li><code>home_goods_store</code></li>
+  </ul>
+</div>
+<div class="column"> <ul>
+    <li><code>hospital</code></li>
+    <li><code>insurance_agency</code></li>
+    <li><code>jewelry_store</code></li>
+    <li><code>laundry</code></li>
+    <li><code>lawyer</code></li>
+    <li><code>library</code></li>
+    <li><code>liquor_store</code></li>
+    <li><code>local_government_office</code></li>
+    <li><code>locksmith</code></li>
+    <li><code>lodging</code></li>
+    <li><code>meal_delivery</code></li>
+    <li><code>meal_takeaway</code></li>
+    <li><code>mosque</code></li>
+    <li><code>movie_rental</code></li>
+    <li><code>movie_theater</code></li>
+    <li><code>moving_company</code></li>
+    <li><code>museum</code></li>
+    <li><code>night_club</code></li>
+    <li><code>painter</code></li>
+    <li><code>park</code></li>
+    <li><code>parking</code></li>
+    <li><code>pet_store</code></li>
+    <li><code>pharmacy</code></li>
+    <li><code>physiotherapist</code></li>
+    <li><code>plumber</code></li>
+    <li><code>police</code></li>
+    <li><code>post_office</code></li>
+    <li><code>real_estate_agency</code></li>
+    <li><code>restaurant</code></li>
+    <li><code>roofing_contractor</code></li>
+    <li><code>rv_park</code></li>
+    <li><code>school</code></li>
+    <li><code>shoe_store</code></li>
+    <li><code>shopping_mall</code></li>
+    <li><code>spa</code></li>
+    <li><code>stadium</code></li>
+    <li><code>storage</code></li>
+    <li><code>store</code></li>
+    <li><code>subway_station</code></li>
+    <li><code>synagogue</code></li>
+    <li><code>taxi_stand</code></li>
+    <li><code>train_station</code></li>
+    <li><code>transit_station</code></li>
+    <li><code>travel_agency</code></li>
+    <li><code>university</code></li>
+    <li><code>veterinary_care</code></li>
+    <li><code>zoo</code></li>
+  </ul>
+</div>

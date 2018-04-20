@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<form action="/jobs" method="POST">
+    Sort By:<br/>
+    <input type="radio" name="sortby" value="MinSalary"/> MinSalary <br/>
+    <input type="radio" name="sortby" value="MinSalary"/> MaxSalary <br/>
+    <br/>
+    Sort Order:<br/>
+    <input type="radio" name="sortorder" value="asc"/> Ascending <br/>
+    <input type="radio" name="sortorder" value="desc"/> Descending <br/>
+    <br/>
+    <input type="submit" name="update" value="Update"/>
+    <br/>
+    <br/>
+</form>
+
+<p><a href="/jobs/plot"> Go to plot!</a></p>
+
+<table border=1>
+    <tr>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>Location</th>
+        <th>MinSalary</th>
+        <th>MaxSalary</th>
+        <th>Description</th>
+        <th>Apply Link</th>
+        <th>Summary</th>
+        <!-- <th>Plot Nearby</th> -->
+    </tr>
+{% for j in job_list %}
+    <tr>
+        <td>{{j[0]}}</td>
+        <td>{{j[1]}}</td>
+        <td>{{j[2]}}</td>
+        <td>{{j[3]}}</td>
+        <td>{{j[4]}}</td>
+        <td>{{j[5]}}</td>
+        <td><a href={{j[6]}}> click </a></td>
+        <td>{{j[7]}}</td>
+        <!-- <td><form action='/jobs/plot/nearby' method="POST">
+            <input type='submit' name='plot_nearby' value='plot nearly' />
+            <input type='hidden' name='num' value= /> </td> -->
+    </tr>
+{% endfor %}
+</table>
